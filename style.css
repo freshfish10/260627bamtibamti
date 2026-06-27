@@ -1,17 +1,17 @@
 :root {
   color-scheme: light;
-  --bg: #00ffcc;
-  --surface: #fff200;
-  --surface-strong: #ff8ad8;
-  --ink: #20004f;
-  --muted: #003d82;
-  --line: #111111;
-  --primary: #ff00aa;
-  --primary-dark: #00a000;
-  --teal: #001eff;
-  --amber: #ff5a00;
-  --danger: #ff0000;
-  --shadow: 12px 12px 0 #ff00aa, 20px 20px 0 #00aaff;
+  --bg: #f0f4f8;
+  --surface: #ffffff;
+  --surface-strong: #e2e8f0;
+  --ink: #1e293b;
+  --muted: #64748b;
+  --line: #cbd5e1;
+  --primary: #3b82f6;
+  --primary-dark: #1d4ed8;
+  --teal: #0ea5e9;
+  --amber: #f59e0b;
+  --danger: #ef4444;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -21,13 +21,9 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background:
-    repeating-linear-gradient(45deg, rgba(255, 0, 170, 0.28) 0 14px, transparent 14px 28px),
-    radial-gradient(circle at 15% 12%, #fff200 0 70px, transparent 72px),
-    radial-gradient(circle at 86% 20%, #ff5a00 0 95px, transparent 97px),
-    linear-gradient(120deg, #00ffcc 0%, #b9ff00 38%, #f8c4ff 39%, #a7fffb 100%);
+  background: var(--bg);
   color: var(--ink);
-  font-family: "Comic Sans MS", "Impact", "Malgun Gothic", cursive, sans-serif;
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
   letter-spacing: 0;
 }
 
@@ -48,11 +44,10 @@ button {
   width: min(1120px, calc(100% - 32px));
   margin: 18px auto 20px;
   padding: 18px 22px;
-  border: 6px ridge #111111;
-  border-radius: 2px 22px 4px 18px;
-  background:
-    linear-gradient(90deg, #fff200, #ff00aa 31%, #00ff00 62%, #00aaff);
-  box-shadow: 9px 9px 0 #111111;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--primary-dark);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .topbar h1,
@@ -65,27 +60,27 @@ button {
 
 .topbar h1 {
   color: #ffffff;
-  font-size: clamp(28px, 4vw, 46px);
-  text-shadow: 3px 3px 0 #ff0000, 6px 6px 0 #0000ff;
+  font-size: clamp(22px, 3vw, 36px);
+  text-shadow: none;
 }
 
 .topbar h1::after {
-  content: " !!!";
-  color: #fff200;
+  content: "";
 }
 
 .eyebrow {
   display: inline-block;
   margin: 0 0 10px;
   padding: 3px 9px;
-  border: 3px dotted #111111;
-  background: #00ff00;
-  color: #d10000;
-  font-size: 13px;
-  font-weight: 900;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface-strong);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  transform: rotate(-1.5deg);
+  transform: none;
 }
 
 .app-shell {
@@ -104,8 +99,8 @@ button {
 .login-panel,
 .student-card,
 .student-profile {
-  border: 5px solid var(--line);
-  border-radius: 3px 18px 6px 28px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
   background: var(--surface);
   box-shadow: var(--shadow);
 }
@@ -118,49 +113,34 @@ button {
   justify-content: flex-end;
   overflow: hidden;
   padding: 36px;
-  background:
-    linear-gradient(135deg, rgba(0, 30, 255, 0.45), transparent 32%),
-    repeating-linear-gradient(90deg, #fff200 0 28px, #ffb000 28px 42px, #f7ff72 42px 58px);
+  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 60%, #60a5fa 100%);
 }
 
 .intro-panel::before {
-  content: "HOT";
-  position: absolute;
-  top: 22px;
-  right: 24px;
-  width: 104px;
-  height: 104px;
-  display: grid;
-  place-items: center;
-  border: 5px dashed #111111;
-  border-radius: 50%;
-  background: #ff00aa;
-  color: #ffffff;
-  font-family: Impact, "Malgun Gothic", sans-serif;
-  font-size: 34px;
-  transform: rotate(14deg);
-  text-shadow: 2px 2px 0 #0000ff;
+  content: "";
+  display: none;
 }
 
 .intro-panel h2 {
   max-width: 720px;
-  color: #001eff;
-  font-size: clamp(32px, 5vw, 60px);
-  line-height: 1.04;
-  text-decoration: underline wavy #ff00aa 4px;
-  text-shadow: 2px 2px 0 #ffffff, 5px 5px 0 #00ff00;
+  color: #ffffff;
+  font-size: clamp(26px, 4vw, 48px);
+  line-height: 1.15;
+  text-decoration: none;
+  text-shadow: none;
 }
 
 .intro-panel p:not(.eyebrow) {
   max-width: 620px;
-  margin: 22px 0 0;
-  border: 3px double #ff0000;
-  background: #ffffff;
-  color: #5b008e;
-  font-size: 18px;
-  font-weight: 800;
+  margin: 16px 0 0;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.7;
-  padding: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
 }
 
 .login-panel {
@@ -168,41 +148,41 @@ button {
   align-content: start;
   gap: 13px;
   padding: 28px;
-  background:
-    linear-gradient(180deg, #f8c4ff, #ffffff 41%, #c6ff00 42%, #ffffff);
-  transform: rotate(0.7deg);
+  background: var(--surface);
+  transform: none;
 }
 
 .login-panel h2 {
-  color: #ff0000;
-  font-size: 34px;
-  text-shadow: 2px 2px 0 #fff200;
+  color: var(--ink);
+  font-size: 28px;
+  text-shadow: none;
 }
 
 .login-panel label {
   width: max-content;
-  padding: 2px 8px;
-  border-left: 8px solid #001eff;
-  background: #ff8ad8;
-  color: #111111;
-  font-weight: 900;
+  padding: 2px 0;
+  border-left: 3px solid var(--primary);
+  padding-left: 8px;
+  background: transparent;
+  color: var(--ink);
+  font-weight: 600;
 }
 
 .login-panel input {
   width: 100%;
-  height: 48px;
-  border: 4px inset #808080;
-  border-radius: 0;
-  background: #eaffff;
-  color: #111111;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
   outline: none;
   padding: 0 14px;
-  font-weight: 800;
+  font-weight: 400;
 }
 
 .login-panel input:focus {
-  border-color: #ff00aa;
-  box-shadow: 0 0 0 5px #fff200, 0 0 0 9px #001eff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 .form-message {
@@ -216,36 +196,36 @@ button {
 .primary-button,
 .ghost-button,
 .text-button {
-  min-height: 44px;
-  border-radius: 2px 14px 2px 14px;
-  border: 4px outset #ffffff;
+  min-height: 42px;
+  border-radius: 8px;
+  border: 1px solid transparent;
   padding: 0 18px;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 600;
+  text-transform: none;
 }
 
 .primary-button {
-  background: linear-gradient(90deg, #00ff00, #fff200, #ff00aa);
-  color: #111111;
-  box-shadow: 5px 5px 0 #001eff;
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: none;
 }
 
 .primary-button:hover {
-  background: linear-gradient(90deg, #ff00aa, #00aaff, #fff200);
+  background: var(--primary-dark);
 }
 
 .ghost-button,
 .text-button {
-  background: #ff8ad8;
-  color: #001eff;
-  border-color: #111111;
-  box-shadow: 4px 4px 0 #fff200;
+  background: var(--surface);
+  color: var(--primary);
+  border-color: var(--line);
+  box-shadow: none;
 }
 
 .ghost-button:hover,
 .text-button:hover {
-  background: #00ff00;
-  color: #ff0000;
+  background: var(--surface-strong);
+  color: var(--primary-dark);
 }
 
 .view-header {
@@ -255,15 +235,16 @@ button {
   gap: 16px;
   margin-bottom: 22px;
   padding: 14px 18px;
-  border: 5px dashed #ff00aa;
-  background: #fff200;
-  box-shadow: 7px 7px 0 #001eff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
 }
 
 .view-title h2 {
-  color: #ff0000;
-  font-size: clamp(26px, 4vw, 44px);
-  text-shadow: 2px 2px 0 #ffffff, 4px 4px 0 #00ff00;
+  color: var(--ink);
+  font-size: clamp(22px, 3vw, 36px);
+  text-shadow: none;
 }
 
 .view-title p {
@@ -280,8 +261,8 @@ button {
 
 .student-profile {
   overflow: hidden;
-  background: #f8c4ff;
-  transform: rotate(-0.6deg);
+  background: var(--surface);
+  transform: none;
 }
 
 .student-photo {
@@ -289,31 +270,31 @@ button {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
-  border-bottom: 6px groove #ff5a00;
+  border-bottom: 1px solid var(--line);
   background: var(--surface-strong);
-  filter: saturate(1.6) contrast(1.08);
+  filter: none;
 }
 
 .profile-body {
   padding: 22px;
-  background:
-    repeating-linear-gradient(0deg, #ffffff 0 13px, #eaffff 13px 26px);
+  background: var(--surface);
 }
 
 .profile-body h3 {
   margin: 0;
-  color: #001eff;
-  font-size: 31px;
-  text-shadow: 2px 2px 0 #fff200;
+  color: var(--ink);
+  font-size: 26px;
+  text-shadow: none;
 }
 
 .student-number {
   width: max-content;
   margin: 8px 0 0;
   padding: 4px 10px;
-  background: #00ff00;
-  color: #d10000;
-  font-weight: 900;
+  border-radius: 4px;
+  background: var(--surface-strong);
+  color: var(--muted);
+  font-weight: 600;
 }
 
 .tag-row {
@@ -326,20 +307,20 @@ button {
 .tag {
   display: inline-flex;
   align-items: center;
-  min-height: 32px;
-  border: 3px solid #111111;
-  border-radius: 0 14px 0 14px;
+  min-height: 28px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
   padding: 0 12px;
-  background: #fff200;
-  color: #001eff;
+  background: var(--surface-strong);
+  color: var(--ink);
   font-size: 13px;
-  font-weight: 900;
-  box-shadow: 3px 3px 0 #ff00aa;
+  font-weight: 500;
+  box-shadow: none;
 }
 
 .tag:nth-child(even) {
-  background: #00aaff;
-  color: #ffffff;
+  background: #dbeafe;
+  color: #1d4ed8;
 }
 
 .content-stack {
@@ -362,49 +343,51 @@ button {
 
 .section-title h3 {
   display: inline-block;
-  padding: 5px 12px;
-  background: #ff00aa;
-  color: #ffffff;
-  text-shadow: 2px 2px 0 #111111;
-  transform: rotate(-1deg);
+  padding: 5px 0;
+  background: transparent;
+  color: var(--ink);
+  text-shadow: none;
+  transform: none;
+  border-bottom: 2px solid var(--primary);
 }
 
 .grade-table {
   width: 100%;
   border-collapse: collapse;
   overflow: hidden;
-  border: 5px ridge #111111;
-  border-radius: 0;
-  background: #ffffff;
-  box-shadow: 6px 6px 0 #00aaff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
 }
 
 .grade-table th,
 .grade-table td {
   padding: 12px;
-  border: 3px solid #111111;
+  border: 1px solid var(--line);
   text-align: left;
   vertical-align: top;
 }
 
 .grade-table th {
   width: 46%;
-  background: #00ff00;
-  color: #001eff;
+  background: var(--surface-strong);
+  color: var(--muted);
+  font-weight: 600;
 }
 
 .grade-table td {
-  background: #fff200;
-  color: #d10000;
-  font-weight: 900;
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 400;
 }
 
 .grade-table tr:nth-child(even) th {
-  background: #ff8ad8;
+  background: #f8fafc;
 }
 
 .grade-table tr:nth-child(even) td {
-  background: #eaffff;
+  background: #f8fafc;
 }
 
 .memo-list {
@@ -416,19 +399,19 @@ button {
 }
 
 .memo-list li {
-  border: 4px dotted #001eff;
-  border-left: 12px solid var(--amber);
-  border-radius: 0 18px 3px 0;
-  background: #ffffff;
-  color: #5b008e;
-  font-weight: 800;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--amber);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 400;
   padding: 12px 14px;
-  box-shadow: 5px 5px 0 #fff200;
+  box-shadow: var(--shadow);
 }
 
 .memo-list li:nth-child(2n) {
-  background: #f8c4ff;
-  border-color: #00ff00;
+  background: #fffbeb;
+  border-left-color: var(--primary);
 }
 
 .admin-grid {
@@ -440,21 +423,21 @@ button {
 
 .student-card {
   overflow: hidden;
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .student-card:nth-child(1) {
-  transform: rotate(-1deg);
+  transform: none;
 }
 
 .student-card:nth-child(2) {
-  transform: rotate(1.2deg);
-  background: #c6ff00;
+  transform: none;
+  background: var(--surface);
 }
 
 .student-card:nth-child(3) {
-  transform: rotate(-0.4deg);
-  background: #ff8ad8;
+  transform: none;
+  background: var(--surface);
 }
 
 .student-card .student-photo {
@@ -466,9 +449,9 @@ button {
 }
 
 .student-card h3 {
-  color: #ff0000;
-  font-size: 24px;
-  text-shadow: 2px 2px 0 #fff200;
+  color: var(--ink);
+  font-size: 20px;
+  text-shadow: none;
 }
 
 .compact-table {
